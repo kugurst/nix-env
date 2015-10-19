@@ -1,0 +1,10 @@
+# computer specific vim files
+.viminfo
+.vimundo
+vimundo
+.vimviews
+.vimbackup
+.vimswap
+
+# vundle installation
+.vim/bundle

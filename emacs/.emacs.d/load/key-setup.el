@@ -14,7 +14,8 @@
 (global-set-key [f1] 'switch-to-previous-buffer)
 (global-set-key (kbd "M-p") 'ace-window)
 (global-set-key (kbd "C-x C-b") 'bs-show)
-(global-set-key (kbd "M-<apps>") 'kill-some-buffers)
+(global-set-key (kbd "C-<apps>") 'kill-some-buffers)
+(global-set-key (kbd "M-<apps>") 'other-frame)
 (global-set-key (kbd "<scroll>") (lookup-key global-map (kbd "M-x")))
 (global-set-key (kbd "C-d") 'kill-whole-line)
 (global-set-key (kbd "M-p") 'ace-window)
@@ -26,6 +27,7 @@
 (global-set-key [f6] (lambda ()
                        (interactive)
                        (print default-directory)))
+;; (global-set-key (kbd "<left-margin> <double-mouse-1>") 'term-line-mode)
 
 (when (fboundp 'next-buffer)            ; Emacs 21+.
   (global-set-key [C-pause] 'previous-buffer)                                   ; `C-pause'

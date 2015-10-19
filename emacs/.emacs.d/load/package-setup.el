@@ -99,4 +99,3 @@
 (require 'markdown-mode)
 
 (require 'desktop)
-(desktop-save-mode 1)
