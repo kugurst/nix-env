@@ -31,6 +31,7 @@
 
 (when (fboundp 'next-buffer)            ; Emacs 21+.
   (global-set-key [C-pause] 'previous-buffer)                                   ; `C-pause'
+  (global-set-key [M-scroll] 'previous-buffer)
   (global-set-key [M-pause] 'next-buffer))                                      ; `M-pause'
 
 (global-set-key (kbd "C-'") 'term-line-mode)

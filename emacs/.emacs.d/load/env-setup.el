@@ -27,9 +27,9 @@
        (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
 
 ;; comint uninstall
-(progn (remove-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
-       (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
-       (setq font-lock-unfontify-region-function 'font-lock-default-unfontify-region))
+;; (progn (remove-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
+;;        (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
+;;        (setq font-lock-unfontify-region-function 'font-lock-default-unfontify-region))
 
 ;; Also set TERM accordingly (xterm-256color)
 
@@ -39,8 +39,8 @@
           (lambda ()
             (setq xterm-color-preserve-properties t)))
 
-;; (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
-;; (setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
+(add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
+(setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
 ;; (require 'ansi-color)
 ;; (defun colorize-compilation-buffer ()
 ;; (toggle-read-only)

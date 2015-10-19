@@ -1,0 +1,46 @@
+# -*- mode: sh -*-
+#source ~/.fasd/fasd
+#eval "$(fasd --init auto)"
+
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+source ~/.antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundles <<EOBUNDLES
+git
+gitfast
+git-extras
+jsontools
+pip
+zsh-users/zsh-completions src
+copydir
+extract
+dirhistory
+ssh-agent
+gem
+last-working-dir
+per-directory-history
+autopep8
+perl
+pep8
+python
+sublime
+sudo
+gitignore
+colorize
+pyenv
+ruby
+EOBUNDLES
+
+# Syntax highlighting bundle.
+[[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
+
+# Load the theme.
+antigen theme junkfood
+
+# Tell antigen that you're done.
+antigen apply

@@ -99,3 +99,5 @@
 (require 'markdown-mode)
 
 (require 'desktop)
+
+(require 'eshell)
