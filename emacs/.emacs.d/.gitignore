@@ -1,0 +1,15 @@
+# emacs temporaries
+ido.last
+.emacs.desktop*
+ac-comphist.dat
+
+# emacs history files
+eshell
+places
+smex-items
+tramp
+savehist
+
+# distribution files
+tutorial
+elpa

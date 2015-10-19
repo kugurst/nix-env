@@ -1,0 +1,39 @@
+[submodule "emacs/.emacs.d/themes/amelie-theme"]
+	path = emacs/.emacs.d/themes/amelie-theme
+	url = https://github.com/ranmocy/amelie-theme.git
+[submodule "emacs/.emacs.d/plugins/ace-jump-mode"]
+	path = emacs/.emacs.d/plugins/ace-jump-mode
+	url = https://github.com/winterTTr/ace-jump-mode.git
+[submodule "emacs/.emacs.d/plugins/ecb"]
+	path = emacs/.emacs.d/plugins/ecb
+	url = https://github.com/alexott/ecb
+[submodule "emacs/.emacs.d/plugins/emacs-eclim"]
+	path = emacs/.emacs.d/plugins/emacs-eclim
+	url = https://github.com/senny/emacs-eclim.git
+[submodule "emacs/.emacs.d/plugins/emacs-jabber"]
+	path = emacs/.emacs.d/plugins/emacs-jabber
+	url = https://github.com/legoscia/emacs-jabber
+[submodule "emacs/.emacs.d/plugins/emacs-zlc"]
+	path = emacs/.emacs.d/plugins/emacs-zlc
+	url = https://github.com/mooz/emacs-zlc.git
+[submodule "emacs/.emacs.d/plugins/exec-path-from-shell"]
+	path = emacs/.emacs.d/plugins/exec-path-from-shell
+	url = https://github.com/purcell/exec-path-from-shell.git
+[submodule "emacs/.emacs.d/plugins/fasd-shell"]
+	path = emacs/.emacs.d/plugins/fasd-shell
+	url = https://gitlab.com/emacs-stuff/fasd-shell.git
+[submodule "emacs/.emacs.d/plugins/ido-ubiquitous"]
+	path = emacs/.emacs.d/plugins/ido-ubiquitous
+	url = https://github.com/DarwinAwardWinner/ido-ubiquitous.git
+[submodule "emacs/.emacs.d/plugins/ssh-el"]
+	path = emacs/.emacs.d/plugins/ssh-el
+	url = https://github.com/ieure/ssh-el
+[submodule "emacs/.emacs.d/plugins/undo-tree"]
+	path = emacs/.emacs.d/plugins/undo-tree
+	url = http://www.dr-qubit.org/git/undo-tree.git
+[submodule "emacs/.emacs.d/plugins/yaml-mode"]
+	path = emacs/.emacs.d/plugins/yaml-mode
+	url = https://github.com/yoshiki/yaml-mode
+[submodule "emacs/.emacs.d/plugins/dash"]
+	path = emacs/.emacs.d/plugins/dash
+	url = https://github.com/magnars/dash.el.git
