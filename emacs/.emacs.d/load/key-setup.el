@@ -1,5 +1,7 @@
 (global-set-key (kbd "C-.") 'ace-jump-mode)
 (global-set-key (kbd "C-,") 'ace-jump-mode-pop-mark)
+(global-set-key (kbd "C-<") 'avy-goto-line)
+(global-set-key (kbd "C->") 'avy-goto-char-2)
 
 (global-set-key [f2] 'sudo-edit-current-file)
 
@@ -27,6 +29,8 @@
 (global-set-key [f6] (lambda ()
                        (interactive)
                        (print default-directory)))
+
+(global-set-key [f7] 'auto-complete-mode)
 ;; (global-set-key (kbd "<left-margin> <double-mouse-1>") 'term-line-mode)
 
 (when (fboundp 'next-buffer)            ; Emacs 21+.
@@ -40,4 +44,17 @@
 (global-set-key (kbd "M-]") 'multi-term-next)
 (global-set-key (kbd "M-[") 'multi-term-prev)
 
+(global-set-key (kbd "C-SPC") 'auto-complete)
+
 (global-set-key (kbd "C-x e") 'term-send-C-x)
+
+(define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
+;; (global-set-key (kbd "TAB") 'indent-relative)
+(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+
+(global-set-key [scroll] 'minimap-toggle)
+
+(global-set-key (kbd "C-l") 'helm-swoop)
+(global-set-key (kbd "C-S-l") 'helm-swoop-back-to-last-point)
+(global-set-key (kbd "M-i") 'helm-multi-swoop)
+(global-set-key (kbd "C-M-i") 'helm-multi-swoop-all)

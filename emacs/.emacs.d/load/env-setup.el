@@ -12,19 +12,19 @@
 (set-terminal-coding-system 'utf-8-unix)
 (setq default-terminal-coding-system 'utf-8-unix)
 (defadvice ansi-term (after advise-ansi-term-coding-system)
-    (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
+	(set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))
 (ad-activate 'ansi-term)
 ;; (setq default-process-coding-system '((utf-8-unix . utf-8-unix)))
 (add-hook 'term-exec-hook
-          (function
-           (lambda ()
-             (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
+		  (function
+		   (lambda ()
+			 (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix))))
 
 ;; xterm in multi-term
 ;; comint install
 (progn (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
-       (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
-       (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
+	   (setq comint-output-filter-functions (remove 'ansi-color-process-output comint-output-filter-functions))
+	   (setq font-lock-unfontify-region-function 'xterm-color-unfontify-region))
 
 ;; comint uninstall
 ;; (progn (remove-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
@@ -36,8 +36,8 @@
 ;; You can also use it with eshell (and thus get color output from system ls):
 
 (add-hook 'eshell-mode-hook
-          (lambda ()
-            (setq xterm-color-preserve-properties t)))
+		  (lambda ()
+			(setq xterm-color-preserve-properties t)))
 
 (add-to-list 'eshell-preoutput-filter-functions 'xterm-color-filter)
 (setq eshell-output-filter-functions (remove 'eshell-handle-ansi-color eshell-output-filter-functions))
@@ -47,7 +47,7 @@
 ;; (ansi-color-apply-on-region (point-min) (point-max))
 ;;   (toggle-read-only))
 ;;   (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-;; 
+;;
 ;; (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 ;; (add-to-list 'comint-output-filter-functions 'ansi-color-process-output)
 ;; done with xterm in multi-term
@@ -66,15 +66,15 @@
   savehist-file "~/.emacs.d/savehist")
 (savehist-mode t)
 
-(setq auto-mode-alist 
-      (append '((".*\\.zshrc\\'" . sh-mode))
-              auto-mode-alist))
-(setq auto-mode-alist 
-      (append '((".*\\.zsh-theme\\'" . sh-mode))
-              auto-mode-alist))
-(setq auto-mode-alist 
-      (append '((".*\\PKGBUILD\\'" . sh-mode))
-              auto-mode-alist))
+(setq auto-mode-alist
+	  (append '((".*\\.zshrc\\'" . sh-mode))
+			  auto-mode-alist))
+(setq auto-mode-alist
+	  (append '((".*\\.zsh-theme\\'" . sh-mode))
+			  auto-mode-alist))
+(setq auto-mode-alist
+	  (append '((".*\\PKGBUILD\\'" . sh-mode))
+			  auto-mode-alist))
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
@@ -88,8 +88,8 @@
 (setq multi-term-program "/bin/zsh")
 (setq term-buffer-maximum-size 10000)
 (add-hook 'term-mode-hook
-          (lambda ()
-            (setq term-buffer-maximum-size 10000)))
+		  (lambda ()
+			(setq term-buffer-maximum-size 10000)))
 
 
 (setq directory-tracking-mode 'ftp)
@@ -132,16 +132,28 @@
 
 (when (functionp 'set-fontset-font)
   (set-fontset-font "fontset-default"
-                    'unicode
-                    (font-spec :family "DejaVu Sans Mono"
-                               :width 'normal
-                               :size 13
-                               :weight 'normal)))
+					'unicode
+					(font-spec :family "DejaVu Sans Mono"
+							   :width 'normal
+							   :size 13
+							   :weight 'normal)))
 ;; (add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono" ))
 ;; (set-face-attribute 'default nilt :font  "DejaVu Sans Mono"
 
 (windmove-default-keybindings 'meta)
 
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+(setq indent-tabs-mode nil)
+(setq tab-width 4)
+;; (setq-default tab-stop-list (number-sequence 4 200 4))
+;; (setq tab-stop-list (number-sequence 4 200 4))
+;; (setq-default c-basic-offset 4)
+;; (setq-default tab-always-indent 'complete)
+;; (setq tab-always-indent 'complete)
+
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'conf-mode-hook 'auto-complete-mode)
 
 
 (load-library "func-setup")

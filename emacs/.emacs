@@ -23,24 +23,24 @@
  '(eclim-executable "~/cygdrive/e/eclipse-java-mars-R-win32-x86_64/eclim.bat")
  '(eclimd-default-workspace "~/cygdrive/e/Development/Java/Eclipse")
  '(ido-enable-flex-matching t)
+ '(indent-tabs-mode nil)
  '(markdown-enable-math t)
  '(markdown-indent-on-enter t)
  '(menu-bar-mode nil)
- '(multi-term-buffer-name "multi-terminal")
+ '(multi-term-buffer-name "mt")
  '(multi-term-program "/bin/zsh")
  '(shell-pop-autocd-to-working-dir nil)
  '(shell-pop-default-directory nil)
  '(shell-pop-full-span t)
- '(shell-pop-shell-type
-   (quote
-    ("multi-term" "*terminal*"
-     (lambda nil
-       (multi-term)))))
+ '(shell-pop-shell-type (quote ("multi-term" "*mt-p*" (lambda nil (multi-term)))))
  '(shell-pop-term-shell "/bin/zsh")
  '(shell-pop-universal-key "<apps>")
  '(shell-pop-window-position "top")
  '(shell-pop-window-size 33)
  '(show-paren-mode t)
+ '(tab-stop-list
+   (quote
+    (4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120 124 128 132 136 140 144 148 152 156 160 164 168 172 176 180 184 188 192 196 200)))
  '(term-bind-key-alist
    (quote
     (("C-c C-c" . term-interrupt-subjob)

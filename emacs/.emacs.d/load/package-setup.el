@@ -18,6 +18,7 @@
     better-defaults
     darktooth-theme
     furl
+    fuzzy
     grizzl
     ido-yes-or-no
     markdown-mode
@@ -67,12 +68,13 @@
 (ac-config-default)
 (setq ac-auto-show-menu t)
 
+(require 'fuzzy)
+
 ;; (require 'fasd-shell)
 ;; (add-hook 'shell-mode-hook 'fasd-shell-mode)
 (require 'shell-pop)
 (require 'dired)
-;; (require 'joseph-sudo)
-;; (global-set-key [f2] 'toggle-read-only-file-with-sudo)
+
 (require 'tramp)
 (require 'better-defaults)
 
@@ -89,15 +91,21 @@
 
 (require 'dash)
 
-(require 'eclim)
-(require 'eclimd)
-(global-eclim-mode)
-
-(require 'ac-emacs-eclim-source)
-(ac-emacs-eclim-config)
+;; (require 'eclim)
+;; (require 'eclimd)
+;; (global-eclim-mode)
+;;
+;; (require 'ac-emacs-eclim-source)
+;; (ac-emacs-eclim-config)
 
 (require 'markdown-mode)
 
 (require 'desktop)
 
 (require 'eshell)
+
+(require 'avy)
+
+(require 'minimap)
+
+(require 'helm)
