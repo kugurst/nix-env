@@ -17,6 +17,9 @@
     avy-zap
     better-defaults
     darktooth-theme
+    inflections
+    clean-aindent-mode
+    f
     furl
     fuzzy
     grizzl
@@ -25,12 +28,16 @@
     marmalade
     multi-term
     popup
+    helm
     readline-complete
     s
     seti-theme
     shell-pop
     smex
+    rake
+    readline-complete
     xterm-color
+    projectile-rails
     yasnippet)
   "List of packages needs to be installed at launch")
 
@@ -109,3 +116,9 @@
 (require 'minimap)
 
 (require 'helm)
+
+(require 'clean-aindent-mode)
+
+(require 'flymake-ruby)
+
+(require 'web-mode)

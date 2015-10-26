@@ -48,9 +48,9 @@
 
 (global-set-key (kbd "C-x e") 'term-send-C-x)
 
-(define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
+;; (define-key text-mode-map (kbd "<tab>") 'tab-to-tab-stop)
 ;; (global-set-key (kbd "TAB") 'indent-relative)
-(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+;; (global-set-key (kbd "TAB") 'tab-to-tab-stop)
 
 (global-set-key [scroll] 'minimap-toggle)
 
@@ -58,3 +58,15 @@
 (global-set-key (kbd "C-S-l") 'helm-swoop-back-to-last-point)
 (global-set-key (kbd "M-i") 'helm-multi-swoop)
 (global-set-key (kbd "C-M-i") 'helm-multi-swoop-all)
+
+
+(global-set-key (kbd "C-a") 'smart-beginning-of-line)
+;; (global-set-key (kbd "S-<home>") 'beginning-of-line-mark)
+;; (global-set-key [C-S-home] 'beginning-of-buffer-mark)
+
+
+(define-key markdown-mode-map (kbd "M-<up>") 'windmove-up)
+(define-key markdown-mode-map (kbd "M-<down>") 'windmove-down)
+(define-key markdown-mode-map (kbd "M-<left>") 'windmove-left)
+(define-key markdown-mode-map (kbd "M-<right>") 'windmove-right)
+(define-key markdown-mode-map (kbd "M-p") 'ace-window)
