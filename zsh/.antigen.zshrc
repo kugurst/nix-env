@@ -29,6 +29,8 @@ add_to_path -r "$PAT"
 
 export EDITOR=emacs
 export LANG=en_US.UTF-8
+export WINEARCH="win32"
+export STEAM_FRAME_FORCE_CLOSE=1
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
@@ -46,6 +48,9 @@ alias svim='sudo vim'
 alias srmr='sudo rm -rf'
 alias srm='sudo rm'
 
+alias mount='sudo mount'
+alias umount='sudo umount'
+alias eject='sudo eject'
 alias pacman='sudo pacman'
 alias shutdown='sudo shutdown'
 alias ys='yaourt -S'
@@ -71,6 +76,13 @@ function alias_ssh {
 }
 
 alias ssh='alias_ssh'
+alias reload='. ~/.zshrc'
+alias copy='xclip -sel primary'
+
+source /usr/share/doc/pkgfile/command-not-found.zsh
+source ~/.quartus_path
+
+add_to_path -r "/home/mark/vdent/bin"
 
 export rvmsudo_secure_path=0
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"

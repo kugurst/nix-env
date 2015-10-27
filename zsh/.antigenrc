@@ -11,40 +11,32 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundles <<EOBUNDLES
-git
-gitfast
-git-extras
-jsontools
-pip
-zsh-users/zsh-completions src
-copydir
-extract
-dircycle
-compleat
 dirhistory
-ssh-agent
+extract
 gem
+git
+git-extras
+gitignore
 last-working-dir
 per-directory-history
-autopep8
-perl
-pep8
+pip
 python
-sublime
-systemd
-sudo
-gitignore
-colorize
-pyenv
 ruby
 rvm
+ssh-agent
+systemd
+zsh-users/zsh-completions src
 EOBUNDLES
 
 # Syntax highlighting bundle.
 [[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme bureau
+# Load the theme.i
+if [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
+    antigen theme halfo/lambda-mod-zsh-theme lambda-mod
+else
+    antigen theme agnoster
+fi
 
 # Tell antigen that you're done.
 antigen apply

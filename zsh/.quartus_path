@@ -1,0 +1,45 @@
+#!/bin/zsh
+
+NIOS2="/opt/nios2/bin"
+export_nios2() {
+    if [[ -z "$NIOS2f" ]]; then
+        export PATH="$NIOS2:$PATH"
+        export NIOS2f="y"
+    else
+        echo "Removing $NIOS2..."
+        export PATH="${PATH#$NIOS2:}"
+        export NIOS2f=""
+    fi
+}
+Q13P="/opt/altera/13.0sp1/quartus/bin:/opt/altera/13.0sp1/nios2eds/bin:/opt/altera/13.0sp1/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin"
+Q14P="/opt/altera/14.0/quartus/bin:/opt/altera/14.0/nios2eds/bin:/opt/altera/14.0/nios2eds/bin/gnu/H-i686-pc-linux-gnu/bin"
+quartus13() {
+    if [[ ! "$PATH" == *"$Q13P"* && ! "$PATH" == *"$Q14P"* ]]; then
+        export PATH="$Q13P:$PATH"
+        export QUARTUS_ROOTDIR="/opt/altera/13.0sp1/quartus"
+    else
+        if [[ "$PATH" == *"$Q13P"* ]]; then
+            echo "Removing $Q13P..."
+            export PATH="${PATH#$Q13P:}"
+        elif [[ "$PATH" == *"$Q14P"* ]]; then
+            echo "Replacing $Q14P with $Q13P..."
+            export PATH="${PATH#$Q14P:}"
+            export PATH="$Q13P:$PATH"
+        fi
+    fi
+}
+quartus14() {
+    if [[ ! "$PATH" == *"$Q13P"* && ! "$PATH" == *"$Q14P"* ]]; then
+        export PATH="$Q14P:$PATH"
+        export QUARTUS_ROOTDIR="/opt/altera/14.0/quartus"
+    else
+        if [[ "$PATH" == *"$Q14P"* ]]; then
+            echo "Removing $Q14P..."
+            export PATH="${PATH#$Q14P:}"
+        elif [[ "$PATH" == *"$Q13P"* ]]; then
+            echo "Replacing $Q13P with $Q14P..."
+            export PATH="${PATH#$Q13P:}"
+            export PATH="$Q14P:$PATH"
+        fi
+    fi
+}

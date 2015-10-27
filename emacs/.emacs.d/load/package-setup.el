@@ -16,34 +16,34 @@
     avy
     avy-zap
     better-defaults
-    darktooth-theme
-    inflections
     clean-aindent-mode
+    darktooth-theme
     enh-ruby-mode
     f
     flymake-ruby
     furl
     fuzzy
     grizzl
+    helm
+    helm-swoop
     ido-yes-or-no
+    inflections
     markdown-mode
     marmalade
     multi-term
     popup
-    helm
-    helm-swoop
+    projectile-rails
+    rake
     readline-complete
     rinari
     robe
+    rvm
     s
     seti-theme
     shell-pop
     smex
-    rake
-    readline-complete
-    xterm-color
-    projectile-rails
     web-mode
+    xterm-color
     yasnippet)
   "List of packages needs to be installed at launch")
 
