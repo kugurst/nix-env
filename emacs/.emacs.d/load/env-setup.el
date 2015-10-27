@@ -183,7 +183,15 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; (setenv "PATH" "/usr/local/bin:/usr/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/lib/extralibs/bin:/cygdrive/c/ProgramData/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0:/cygdrive/c/Program Files (x86)/Pandoc:/cygdrive/c/Users/marka/AppData/Roaming/cabal/bin:/cygdrive/c/Users/marka/AppData/Roaming/npm:/usr/lib/lapack:/cygdrive/c/Program Files/MongoDB/Server/3.0/bin:\\Ruby21-x64\\bin")
 ;; (setq exec-path '("/usr/local/bin"

@@ -19,7 +19,9 @@
     darktooth-theme
     inflections
     clean-aindent-mode
+    enh-ruby-mode
     f
+    flymake-ruby
     furl
     fuzzy
     grizzl
@@ -29,7 +31,10 @@
     multi-term
     popup
     helm
+    helm-swoop
     readline-complete
+    rinari
+    robe
     s
     seti-theme
     shell-pop
@@ -38,6 +43,7 @@
     readline-complete
     xterm-color
     projectile-rails
+    web-mode
     yasnippet)
   "List of packages needs to be installed at launch")
 
@@ -116,9 +122,12 @@
 (require 'minimap)
 
 (require 'helm)
+(require 'helm-swoop)
 
 (require 'clean-aindent-mode)
 
 (require 'flymake-ruby)
 
 (require 'web-mode)
+
+(require 'rvm)

@@ -19,6 +19,8 @@ pip
 zsh-users/zsh-completions src
 copydir
 extract
+dircycle
+compleat
 dirhistory
 ssh-agent
 gem
@@ -29,18 +31,20 @@ perl
 pep8
 python
 sublime
+systemd
 sudo
 gitignore
 colorize
 pyenv
 ruby
+rvm
 EOBUNDLES
 
 # Syntax highlighting bundle.
 [[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme junkfood
+antigen theme bureau
 
 # Tell antigen that you're done.
 antigen apply
