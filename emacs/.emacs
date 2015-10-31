@@ -1,5 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/load/")
-(add-to-list 'load-path "~/.emacs.d/plugins/")
+(add-to-list 'load-path "~/.emacs.d/plugins/guess-style")
 (let ((default-directory "~/.emacs.d/plugins/"))
   (normal-top-level-add-subdirs-to-load-path))
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")

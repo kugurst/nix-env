@@ -1,3 +1,4 @@
 # compiled .el files
 *.elc
 .emacs.before_ecb_2.40
+.emacs.d/projectile-bookmarks.eld

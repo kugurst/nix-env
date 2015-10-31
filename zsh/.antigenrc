@@ -23,7 +23,6 @@ pip
 python
 ruby
 rvm
-ssh-agent
 systemd
 zsh-users/zsh-completions src
 EOBUNDLES
@@ -34,6 +33,8 @@ EOBUNDLES
 # Load the theme.i
 if [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
     antigen theme halfo/lambda-mod-zsh-theme lambda-mod
+elif [[ -z "$DISPLAY" ]]; then
+    antigen theme blinks
 else
     antigen theme agnoster
 fi

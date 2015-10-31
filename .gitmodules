@@ -49,3 +49,9 @@
 [submodule "emacs/.emacs.d/plugins/emacs-minimap"]
 	path = emacs/.emacs.d/plugins/emacs-minimap
 	url = https://github.com/dustinlacewell/emacs-minimap.git
+[submodule "emacs/.emacs.d/plugins/guess-style"]
+	path = emacs/.emacs.d/plugins/guess-style
+	url = https://github.com/nschum/guess-style
+[submodule "vim/.vim_runtime"]
+	path = vim/.vim_runtime
+	url = git://github.com/amix/vimrc.git

@@ -39,6 +39,7 @@
     robe
     rvm
     s
+    scss-mode
     seti-theme
     shell-pop
     smex
@@ -131,3 +132,5 @@
 (require 'web-mode)
 
 (require 'rvm)
+
+(require 'guess-style)

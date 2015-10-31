@@ -2,9 +2,10 @@
 (setq inhibit-startup-message t)
 (setq show-paren-delay 0)
 (show-paren-mode 1)
-(setq w32-pipe-read-delay 0)
+;; (setq w32-pipe-read-delay 0)
 ;; Don't make a sound when striking the bell
-(setq visible-bell 1)
+(setq ring-bell-function 'ignore)
+(setq visible-bell nil)
 
 ;; Default to UTF-8 everywhere
 (set-language-environment "UTF-8")
@@ -167,9 +168,10 @@
 (add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
 (add-hook 'enh-ruby-mode-hook 'auto-complete-mode)
 (add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
-(add-hook 'enh-ruby-mode-hook 'robe-mode)
+;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
-(add-hook 'robe-mode-hook 'ac-robe-setup)
+(add-hook 'enh-ruby-mode-hook 'projectile-mode)
+;; (add-hook 'robe-mode-hook 'ac-robe-setup)
 
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
@@ -183,8 +185,8 @@
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 
-(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-  (rvm-activate-corresponding-ruby))
+;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+;;   (rvm-activate-corresponding-ruby))
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -192,6 +194,13 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 
 (setq scroll-step 1) ;; keyboard scroll one line at a time
+
+(autoload 'scss-mode "scss-mode")
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
+
+(autoload 'guess-style-set-variable "guess-style" nil t)
+(autoload 'guess-style-guess-variable "guess-style")
+(autoload 'guess-style-guess-all "guess-style" nil t)
 
 ;; (setenv "PATH" "/usr/local/bin:/usr/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/lib/extralibs/bin:/cygdrive/c/ProgramData/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0:/cygdrive/c/Program Files (x86)/Pandoc:/cygdrive/c/Users/marka/AppData/Roaming/cabal/bin:/cygdrive/c/Users/marka/AppData/Roaming/npm:/usr/lib/lapack:/cygdrive/c/Program Files/MongoDB/Server/3.0/bin:\\Ruby21-x64\\bin")
 ;; (setq exec-path '("/usr/local/bin"

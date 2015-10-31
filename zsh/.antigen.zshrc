@@ -84,5 +84,8 @@ source ~/.quartus_path
 
 add_to_path -r "/home/mark/vdent/bin"
 
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 export rvmsudo_secure_path=0
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
