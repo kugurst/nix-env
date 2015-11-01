@@ -202,6 +202,10 @@
 (autoload 'guess-style-guess-variable "guess-style")
 (autoload 'guess-style-guess-all "guess-style" nil t)
 
+
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+
 ;; (setenv "PATH" "/usr/local/bin:/usr/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/lib/extralibs/bin:/cygdrive/c/ProgramData/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0:/cygdrive/c/Program Files (x86)/Pandoc:/cygdrive/c/Users/marka/AppData/Roaming/cabal/bin:/cygdrive/c/Users/marka/AppData/Roaming/npm:/usr/lib/lapack:/cygdrive/c/Program Files/MongoDB/Server/3.0/bin:\\Ruby21-x64\\bin")
 ;; (setq exec-path '("/usr/local/bin"
 ;;                   "/usr/bin"

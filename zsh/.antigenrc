@@ -30,13 +30,15 @@ EOBUNDLES
 # Syntax highlighting bundle.
 [[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.i
-if [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
-    antigen theme halfo/lambda-mod-zsh-theme lambda-mod
+# Load the theme
+if [[ "$HOST" == "nakiami" ]]; then
+    antigen theme kugurst/oh-my-zsh themes/bureau
+elif [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
+    antigen theme kugurst/oh-my-zsh themes/lambda-mod
 elif [[ -z "$DISPLAY" ]]; then
-    antigen theme blinks
+    antigen theme kugurst/oh-my-zsh themes/blinks
 else
-    antigen theme agnoster
+    antigen theme kugurst/oh-my-zsh themes/agnoster
 fi
 
 # Tell antigen that you're done.

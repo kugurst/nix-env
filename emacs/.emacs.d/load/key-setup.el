@@ -64,6 +64,7 @@
 ;; (global-set-key (kbd "S-<home>") 'beginning-of-line-mark)
 ;; (global-set-key [C-S-home] 'beginning-of-buffer-mark)
 
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 (define-key markdown-mode-map (kbd "M-<up>") 'windmove-up)
 (define-key markdown-mode-map (kbd "M-<down>") 'windmove-down)

@@ -43,6 +43,7 @@
     seti-theme
     shell-pop
     smex
+    unbound
     web-mode
     xterm-color
     yasnippet)
@@ -134,3 +135,5 @@
 (require 'rvm)
 
 (require 'guess-style)
+
+(require 'recentf)
