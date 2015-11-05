@@ -124,7 +124,7 @@
 
 (smex-initialize)
 
-(load-theme 'darktooth t)
+(load-theme 'gruvbox t)
 ;; (load-theme 'Amelie t)
 
 (global-linum-mode t)
@@ -171,7 +171,10 @@
 ;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
 (add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
 (add-hook 'enh-ruby-mode-hook 'projectile-mode)
+(add-hook 'enh-ruby-mode-hook 'electric-pair-mode)
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
+(add-hook 'coffee-mode-hook 'flymake-coffee-load)
+(add-hook 'coffee-mode-hook 'auto-complete-mode)
 
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))

@@ -16,10 +16,15 @@
  (quote
   (emacs-lisp-mode lisp-mode lisp-interaction-mode slime-repl-mode c-mode cc-mode c++-mode go-mode java-mode malabar-mode clojure-mode clojurescript-mode scala-mode scheme-mode ocaml-mode tuareg-mode coq-mode haskell-mode agda-mode agda2-mode perl-mode cperl-mode python-mode ruby-mode lua-mode tcl-mode ecmascript-mode javascript-mode js-mode js2-mode php-mode css-mode scss-mode less-css-mode makefile-mode sh-mode fortran-mode f90-mode ada-mode xml-mode sgml-mode web-mode ts-mode sclang-mode verilog-mode qml-mode yaml-mode conf-mode markdown-mode)))
  '(clean-aindent-mode t)
+ '(coffee-tab-width 2)
+ '(custom-safe-themes
+ (quote
+  ("5d1434865473463d79ee0523c1ae60ecb731ab8d134a2e6f25c17a2b497dd459" "f21caace402180ab3dc5157d2bb843c4daafbe64aadc362c9f4558ac17ce43a2" "0b6645497e51d80eda1d337d6cabe31814d6c381e69491931a688836c16137ed" "f245c9f24b609b00441a6a336bcc556fe38a6b24bfc0ca4aedd4fe23d858ba31" "c0dd384b870de1c769d37fec8f9ff22f191b1eba7a49b1181d361e7a3c4713f0" "03e3e79fb2b344e41a7df897818b7969ca51a15a67dc0c30ebbdeb9ea2cd4492" "b6db49cec08652adf1ff2341ce32c7303be313b0de38c621676122f255ee46db" default)))
  '(desktop-restore-forces-onscreen nil)
  '(desktop-save-mode t)
  '(display-buffer-function nil)
  '(ecb-options-version "2.40")
+ '(ecb-source-path (quote (("/" "/"))))
  '(eclim-eclipse-dirs
  (quote
   ("/Applications/eclipse" "/usr/lib/eclipse" "/usr/local/lib/eclipse" "/usr/share/eclipse" "/cygdrive/e/eclipse-java-mars-R-win32-x86_64" "~/cygdrive/e/eclipse-java-mars-R-win32-x86_64")))

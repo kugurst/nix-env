@@ -17,9 +17,11 @@
     avy-zap
     better-defaults
     clean-aindent-mode
+    coffee-mode
     darktooth-theme
     enh-ruby-mode
     f
+    flymake-coffee
     flymake-ruby
     furl
     fuzzy
@@ -121,7 +123,9 @@
 
 (require 'avy)
 
-(require 'minimap)
+;; (require 'minimap)
+
+(require 'org)
 
 (require 'helm)
 (require 'helm-swoop)

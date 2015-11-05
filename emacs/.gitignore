@@ -3,3 +3,5 @@
 .emacs.before_ecb_2.40
 .emacs.d/projectile-bookmarks.eld
 .emacs.d/recentf
+.emacs.d/session.*
+.emacs.d/url/*
