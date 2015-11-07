@@ -78,3 +78,7 @@ If point was already at that position, move point to beginning of line."
         (goto-char beg)
         (while (< (point) end)
                   (join-line 1)))))
+
+(defun set-tab-stop-to-two ()
+  (set (make-local-variable 'tab-width) 2)
+  (set (make-local-variable 'tab-stop-list) (number-sequence 2 200 2)))

@@ -175,6 +175,7 @@
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'coffee-mode-hook 'auto-complete-mode)
+(add-hook 'web-mode-hook 'set-tab-stop-to-two)
 
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))

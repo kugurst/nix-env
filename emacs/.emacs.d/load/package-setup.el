@@ -26,6 +26,7 @@
     furl
     fuzzy
     grizzl
+    gruvbox-theme
     helm
     helm-swoop
     ido-yes-or-no
