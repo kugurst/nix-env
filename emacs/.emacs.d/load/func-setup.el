@@ -80,5 +80,12 @@ If point was already at that position, move point to beginning of line."
                   (join-line 1)))))
 
 (defun set-tab-stop-to-two ()
-  (set (make-local-variable 'tab-width) 2)
-  (set (make-local-variable 'tab-stop-list) (number-sequence 2 200 2)))
+  (setq-local tab-width 2)
+  (setq-local tab-stop-list (number-sequence 2 200 2)))
+
+(defun my-web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+  (setq web-mode-attr-indent-offset 2))

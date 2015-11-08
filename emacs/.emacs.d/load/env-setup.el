@@ -176,6 +176,7 @@
 (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'coffee-mode-hook 'auto-complete-mode)
 (add-hook 'web-mode-hook 'set-tab-stop-to-two)
+(add-hook 'web-mode-hook 'my-web-mode-hook)
 
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
@@ -188,6 +189,9 @@
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)
 
 ;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
 ;;   (rvm-activate-corresponding-ruby))
