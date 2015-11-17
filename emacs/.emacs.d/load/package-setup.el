@@ -19,8 +19,9 @@
     clean-aindent-mode
     coffee-mode
     darktooth-theme
-    enh-ruby-mode
+    ;; enh-ruby-mode
     f
+    flycheck
     flymake-coffee
     flymake-ruby
     furl
@@ -29,6 +30,7 @@
     gruvbox-theme
     helm
     helm-swoop
+    highlight-indentation
     ido-yes-or-no
     inflections
     markdown-mode
@@ -36,10 +38,12 @@
     multi-term
     popup
     projectile-rails
+    rainbow-mode
     rake
     readline-complete
     rinari
     robe
+    rspec-mode
     rvm
     s
     scss-mode
@@ -49,6 +53,7 @@
     unbound
     web-mode
     xterm-color
+    yari
     yasnippet)
   "List of packages needs to be installed at launch")
 
@@ -133,12 +138,16 @@
 
 (require 'clean-aindent-mode)
 
-(require 'flymake-ruby)
+;; (require 'flymake-ruby)
 
 (require 'web-mode)
 
 (require 'rvm)
+(rvm-use "ruby-head" "personal_server")
 
 (require 'guess-style)
 
 (require 'recentf)
+
+(provide 'package-setup)
+;;; package-setup ends here

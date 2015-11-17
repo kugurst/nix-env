@@ -102,10 +102,13 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; (defun auto-complete-mode-maybe ()
 ;;   "No maybe for you. Only AC!"
 ;;   (unless (minibufferp (current-buffer))
 ;;     (auto-complete-mode 1)))
+
 (global-auto-complete-mode t)
 (autoload
   'ace-jump-mode
@@ -165,22 +168,38 @@
 
 (global-visual-line-mode t)
 
-(add-hook 'enh-ruby-mode-hook 'flymake-ruby-load)
-(add-hook 'enh-ruby-mode-hook 'auto-complete-mode)
-(add-hook 'enh-ruby-mode-hook 'inf-ruby-minor-mode)
-;; (add-hook 'enh-ruby-mode-hook 'robe-mode)
-(add-hook 'enh-ruby-mode-hook 'rinari-minor-mode)
-(add-hook 'enh-ruby-mode-hook 'projectile-mode)
-(add-hook 'enh-ruby-mode-hook 'electric-pair-mode)
+;; (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(add-hook 'ruby-mode-hook 'auto-complete-mode)
+(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+(add-hook 'ruby-mode-hook 'robe-mode)
+(add-hook 'ruby-mode-hook 'rinari-minor-mode)
+(add-hook 'ruby-mode-hook 'projectile-mode)
+(add-hook 'ruby-mode-hook 'electric-pair-mode)
+(add-hook 'ruby-mode-hook '(lambda ()
+                                 (local-set-key (kbd "S-RET") 'reindent-then-newline-and-indent)))
+(add-hook 'ruby-mode-hook
+          (lambda () (highlight-indentation-current-column-mode)))
+(add-hook 'coffee-mode-hook
+          (lambda () (highlight-indentation-current-column-mode)))
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
-(add-hook 'coffee-mode-hook 'flymake-coffee-load)
+;; (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'coffee-mode-hook 'auto-complete-mode)
 (add-hook 'web-mode-hook 'set-tab-stop-to-two)
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
-(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
-(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+(setq flyspell-issue-message-flg nil)
+(add-hook 'ruby-mode-hook
+          (lambda () (flyspell-prog-mode)))
+
+(add-hook 'web-mode-hook
+          (lambda () (flyspell-prog-mode)))
+(ac-flyspell-workaround)
+
+(add-hook 'scss-mode-hook 'rainbow-mode)
+
+;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
 
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
@@ -193,8 +212,8 @@
 (setq web-mode-enable-current-element-highlight t)
 (setq web-mode-enable-current-column-highlight t)
 
-;; (defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
-;;   (rvm-activate-corresponding-ruby))
+(defadvice inf-ruby-console-auto (before activate-rvm-for-robe activate)
+  (rvm-activate-corresponding-ruby))
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;; one line at a time
 
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
@@ -210,6 +229,26 @@
 (autoload 'guess-style-guess-variable "guess-style")
 (autoload 'guess-style-guess-all "guess-style" nil t)
 
+(eval-after-load 'rspec-mode
+  '(rspec-install-snippets))
+
+(eval-after-load "abbrev"
+  '(diminish 'abbrev-mode "Ab"))
+(eval-after-load "yasnippet"
+  '(diminish 'yas-minor-mode " Y"))
+(eval-after-load "undo-tree"
+  '(diminish 'undo-tree-mode " U"))
+(eval-after-load "flymake"
+  '(diminish 'flymake-mode " FM"))
+(eval-after-load "flyspell"
+  '(diminish 'flyspell-mode " F"))
+(eval-after-load "highlight-indentation"
+  '(diminish 'highlight-indentation-current-column-mode " HI"))
+(eval-after-load "rinari"
+  '(diminish 'rinari-minor-mode "Rin"))
+
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)

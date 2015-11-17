@@ -40,6 +40,7 @@
 
 (global-set-key (kbd "C-'") 'term-line-mode)
 (global-set-key (kbd "C-;") 'term-char-mode)
+(global-set-key [S-return] 'reindent-then-newline-and-indent)
 
 (global-set-key (kbd "M-]") 'multi-term-next)
 (global-set-key (kbd "M-[") 'multi-term-prev)
@@ -59,6 +60,8 @@
 (global-set-key (kbd "M-i") 'helm-multi-swoop)
 (global-set-key (kbd "C-M-i") 'helm-multi-swoop-all)
 
+(global-set-key (kbd "C-z") 'undo-tree-undo)
+(global-set-key (kbd "C-S-z") 'undo-tree-redo)
 
 (global-set-key (kbd "C-a") 'smart-beginning-of-line)
 ;; (global-set-key (kbd "S-<home>") 'beginning-of-line-mark)
