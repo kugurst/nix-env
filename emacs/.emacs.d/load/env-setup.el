@@ -103,6 +103,7 @@
   (exec-path-from-shell-initialize))
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
+;; (setq flycheck-check-syntax-automatically '(mode-enabled save idle-change))
 
 ;; (defun auto-complete-mode-maybe ()
 ;;   "No maybe for you. Only AC!"
@@ -168,7 +169,8 @@
 
 (global-visual-line-mode t)
 
-;; (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
+(add-hook 'ruby-mode-hook 'flymake-mode)
 (add-hook 'ruby-mode-hook 'auto-complete-mode)
 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
 (add-hook 'ruby-mode-hook 'robe-mode)
@@ -182,17 +184,18 @@
 (add-hook 'coffee-mode-hook
           (lambda () (highlight-indentation-current-column-mode)))
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
-;; (add-hook 'coffee-mode-hook 'flymake-coffee-load)
+(add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'coffee-mode-hook 'auto-complete-mode)
 (add-hook 'web-mode-hook 'set-tab-stop-to-two)
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
 (setq flyspell-issue-message-flg nil)
+
 (add-hook 'ruby-mode-hook
           (lambda () (flyspell-prog-mode)))
-
 (add-hook 'web-mode-hook
           (lambda () (flyspell-prog-mode)))
+
 (ac-flyspell-workaround)
 
 (add-hook 'scss-mode-hook 'rainbow-mode)
@@ -235,17 +238,23 @@
 (eval-after-load "abbrev"
   '(diminish 'abbrev-mode "Ab"))
 (eval-after-load "yasnippet"
-  '(diminish 'yas-minor-mode " Y"))
+  '(diminish 'yas-minor-mode))
 (eval-after-load "undo-tree"
   '(diminish 'undo-tree-mode " U"))
 (eval-after-load "flymake"
   '(diminish 'flymake-mode " FM"))
 (eval-after-load "flyspell"
-  '(diminish 'flyspell-mode " F"))
+  '(diminish 'flyspell-mode " FS"))
 (eval-after-load "highlight-indentation"
   '(diminish 'highlight-indentation-current-column-mode " HI"))
 (eval-after-load "rinari"
   '(diminish 'rinari-minor-mode "Rin"))
+(eval-after-load "robe"
+  '(diminish 'robe-mode "Rb"))
+(eval-after-load "projectile-rails"
+  '(diminish 'projectile-rails-mode "Rl"))
+(eval-after-load "simple"
+  '(diminish 'visual-line-mode " W"))
 
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")

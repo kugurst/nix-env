@@ -19,6 +19,7 @@
     clean-aindent-mode
     coffee-mode
     darktooth-theme
+    delight
     ;; enh-ruby-mode
     f
     flycheck
@@ -138,7 +139,7 @@
 
 (require 'clean-aindent-mode)
 
-;; (require 'flymake-ruby)
+(require 'flymake-ruby)
 
 (require 'web-mode)
 

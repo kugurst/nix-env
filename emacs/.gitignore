@@ -5,3 +5,4 @@
 .emacs.d/recentf
 .emacs.d/session.*
 .emacs.d/url/*
+.emacs.d/load/flycheck_env-setup.el
