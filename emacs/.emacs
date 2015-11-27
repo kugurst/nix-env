@@ -34,8 +34,10 @@
  '(flycheck-completion-system (quote ido))
  '(flycheck-display-errors-delay 0.1)
  '(flycheck-global-modes (quote (not ruby-mode)))
- '(flycheck-idle-change-delay 0.1)
+ '(flycheck-idle-change-delay 0.3)
  '(flymake-no-changes-timeout 0.2)
+ '(flyspell-issue-message-flag nil)
+ '(flyspell-issue-welcome-flag nil)
  '(ido-enable-flex-matching t)
  '(indent-tabs-mode nil)
  '(inf-ruby-default-implementation "pry")
@@ -95,6 +97,7 @@
  '(default ((t (:family "Inconsolata" :foundry "PfEd" :slant normal :weight normal :height 145 :width normal)))))
 
 (yas-global-mode 1)
+(setq tab-width 2)
 
 (provide '.emacs)
 ;;; .emacs ends here

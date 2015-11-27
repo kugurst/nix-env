@@ -1,3 +1,5 @@
+(load-library "func-setup")
+
 (setq read-buffer-completion-ignore-case t)
 (setq inhibit-startup-message t)
 (setq show-paren-delay 0)
@@ -163,6 +165,12 @@
 
 (set 'clean-aindent-is-simple-indent t)
 
+(defun my-pkg-init()
+  (electric-indent-mode -1)  ; no electric indent, auto-indent is sufficient
+  (clean-aindent-mode t)
+  (setq clean-aindent-is-simple-indent t)
+  (define-key global-map (kbd "RET") 'newline-and-indent))
+
 (add-hook 'after-init-hook 'my-pkg-init)
 
 (add-hook 'projectile-mode-hook 'projectile-rails-on)
@@ -179,12 +187,17 @@
 (add-hook 'ruby-mode-hook 'electric-pair-mode)
 (add-hook 'ruby-mode-hook '(lambda ()
                                  (local-set-key (kbd "S-RET") 'reindent-then-newline-and-indent)))
+
 (add-hook 'ruby-mode-hook
           (lambda () (highlight-indentation-current-column-mode)))
 (add-hook 'coffee-mode-hook
           (lambda () (highlight-indentation-current-column-mode)))
+(add-hook 'web-mode-hook
+          (lambda () (highlight-indentation-current-column-mode)))
+(add-hook 'haml-mode-hook
+          (lambda () (highlight-indentation-current-column-mode)))
 ;; (add-hook 'robe-mode-hook 'ac-robe-setup)
-(add-hook 'coffee-mode-hook 'flymake-coffee-load)
+;; (add-hook 'coffee-mode-hook 'flymake-coffee-load)
 (add-hook 'coffee-mode-hook 'auto-complete-mode)
 (add-hook 'web-mode-hook 'set-tab-stop-to-two)
 (add-hook 'web-mode-hook 'my-web-mode-hook)
@@ -199,6 +212,8 @@
 (ac-flyspell-workaround)
 
 (add-hook 'scss-mode-hook 'rainbow-mode)
+(add-hook 'scss-mode-hook (lambda ()
+                            (setq tab-width 2)))
 
 ;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
@@ -262,27 +277,7 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
-;; (setenv "PATH" "/usr/local/bin:/usr/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/bin:/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/lib/extralibs/bin:/cygdrive/c/ProgramData/Oracle/Java/javapath:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/Program Files (x86)/nodejs:/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0:/cygdrive/c/Program Files (x86)/Pandoc:/cygdrive/c/Users/marka/AppData/Roaming/cabal/bin:/cygdrive/c/Users/marka/AppData/Roaming/npm:/usr/lib/lapack:/cygdrive/c/Program Files/MongoDB/Server/3.0/bin:\\Ruby21-x64\\bin")
-;; (setq exec-path '("/usr/local/bin"
-;;                   "/usr/bin"
-;;                   "/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/bin"
-;;                   "/cygdrive/c/Program Files (x86)/Haskell Platform/7.10.2-a/lib/extralibs/bin"
-;;                   "/cygdrive/c/ProgramData/Oracle/Java/javapath"
-;;                   "/cygdrive/c/WINDOWS/system32"
-;;                   "/cygdrive/c/WINDOWS"
-;;                   "/cygdrive/c/Program Files (x86)/nodejs"
-;;                   "/cygdrive/c/Program Files (x86)/Microsoft SDKs/TypeScript/1.0"
-;;                   "/cygdrive/c/Program Files (x86)/Pandoc"
-;;                   "/cygdrive/c/Users/marka/AppData/Roaming/cabal/bin"
-;;                   "/cygdrive/c/Users/marka/AppData/Roaming/npm"
-;;                   "/usr/lib/lapack"
-;;                   "/cygdrive/c/Program Files/MongoDB/Server/3.0/bin"
-;;                   "\\Ruby21-x64\\bin"))
+(setq css-indent-offset 2)
 
-;; (setenv "PATH" (concat (getenv "PATH") ":/cygdrive/c/Program Files/MongoDB/Server/3.0/bin:\\Ruby21-x64\\bin"))
-;; (setq exec-path (append exec-path '("/cygdrive/c/Users/marka/Documents/cinnamonroll/bin")))
-;; (setq exec-path (append exec-path '("/cygdrive/c/Users/marka/.gem/ruby/bin")))
-;; (setq exec-path (append exec-path '("/cygdrive/c/Program Files/MongoDB/Server/3.0/bin")))
-;; (setq exec-path (append exec-path '("\\Ruby21-x64\\bin")))
-
-(load-library "func-setup")
+(provide 'env-setup)
+;;; env-setup ends here

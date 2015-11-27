@@ -20,6 +20,7 @@
     coffee-mode
     darktooth-theme
     delight
+    diminish
     ;; enh-ruby-mode
     f
     flycheck
@@ -29,6 +30,7 @@
     fuzzy
     grizzl
     gruvbox-theme
+    haml-mode
     helm
     helm-swoop
     highlight-indentation
