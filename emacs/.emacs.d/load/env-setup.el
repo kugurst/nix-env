@@ -82,6 +82,7 @@
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
 
 (setq tramp-default-method "ssh")
 (setq shell-file-name "/bin/zsh")
@@ -162,6 +163,7 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 (add-hook 'conf-mode-hook 'auto-complete-mode)
 (add-hook 'markdown-mode-hook 'auto-complete-mode)
+(add-hook 'haml-mode-hook 'auto-complete-mode)
 
 (set 'clean-aindent-is-simple-indent t)
 
@@ -278,6 +280,7 @@
 (setq recentf-max-menu-items 25)
 
 (setq css-indent-offset 2)
+(setq web-mode-html-offset 2)
 
 (provide 'env-setup)
 ;;; env-setup ends here
