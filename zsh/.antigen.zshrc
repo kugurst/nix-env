@@ -79,6 +79,10 @@ alias ssh='alias_ssh'
 alias reload='. ~/.zshrc'
 alias copy='xclip -sel primary'
 
+semacs () {
+    SASS_PATH="/home/mark/cinnamonroll/app/assets/images:/home/mark/cinnamonroll/app/assets/javascripts:/home/mark/cinnamonroll/app/assets/stylesheets:/home/mark/cinnamonroll/vendor/assets/javascripts:/home/mark/cinnamonroll/vendor/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/turbolinks-2.5.3/lib/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/angularjs-rails-1.4.7/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/images:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-rails-4.0.5/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/js-routes-1.1.2/app/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/coffee-rails-4.1.0/lib/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/foundation-rails-5.5.1.2/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/foundation-rails-5.5.1.2/vendor/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/susy-2.2.7/sass" emacs $@ & disown
+}
+
 source /usr/share/doc/pkgfile/command-not-found.zsh
 source ~/.quartus_path
 
