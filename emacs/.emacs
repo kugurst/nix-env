@@ -98,7 +98,6 @@
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Inconsolata" :foundry "PfEd" :slant normal :weight normal :height 145 :width normal)))))
 
-(yas-global-mode 1)
 (setq tab-width 2)
 
 (provide '.emacs)

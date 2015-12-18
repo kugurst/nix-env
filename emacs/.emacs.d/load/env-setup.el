@@ -216,6 +216,8 @@
 (add-hook 'scss-mode-hook 'rainbow-mode)
 (add-hook 'scss-mode-hook (lambda ()
                             (setq tab-width 2)))
+(add-hook 'term-mode-hook (lambda ()
+                            (yas-minor-mode -1)))
 
 ;; (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
@@ -248,6 +250,8 @@
 (autoload 'guess-style-set-variable "guess-style" nil t)
 (autoload 'guess-style-guess-variable "guess-style")
 (autoload 'guess-style-guess-all "guess-style" nil t)
+
+(yas-global-mode 1)
 
 (eval-after-load 'rspec-mode
   '(rspec-install-snippets))
