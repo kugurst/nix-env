@@ -32,7 +32,7 @@
  '(eclimd-default-workspace "~/cygdrive/e/Development/Java/Eclipse")
  '(flycheck-check-syntax-automatically (quote (save idle-change new-line mode-enabled)))
  '(flycheck-completion-system (quote ido))
- '(flycheck-display-errors-delay 0.1)
+ '(flycheck-display-errors-delay 0.25)
  '(flycheck-global-modes (quote (not ruby-mode)))
  '(flycheck-idle-change-delay 0.3)
  '(flycheck-sass-executable
