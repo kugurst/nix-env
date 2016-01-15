@@ -75,7 +75,13 @@ function alias_ssh {
     ssh $@ ; eterm-reset
 }
 
+function startx_from_home_dir {
+    cd
+    startx
+}
+
 alias ssh='alias_ssh'
+alias startx='startx_from_home_dir'
 alias reload='. ~/.zshrc'
 alias copy='xclip -sel primary'
 

@@ -75,3 +75,8 @@
 (define-key markdown-mode-map (kbd "M-<right>") 'windmove-right)
 (define-key markdown-mode-map (kbd "M-p") 'ace-window)
 (define-key term-mode-map (kbd "TAB") 'term-send-raw)
+(define-key c-mode-map (kbd "C-d") 'kill-whole-line)
+(define-key c++-mode-map (kbd "C-d") 'kill-whole-line)
+
+(provide 'key-setup)
+;;; key-setup ends here

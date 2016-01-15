@@ -152,5 +152,7 @@
 
 (require 'recentf)
 
+(require 'cc-mode)
+
 (provide 'package-setup)
 ;;; package-setup ends here
