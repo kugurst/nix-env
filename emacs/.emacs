@@ -31,6 +31,7 @@
  '(eclim-executable "~/cygdrive/e/eclipse-java-mars-R-win32-x86_64/eclim.bat")
  '(eclimd-default-workspace "~/cygdrive/e/Development/Java/Eclipse")
  '(flycheck-check-syntax-automatically (quote (save idle-change new-line mode-enabled)))
+ '(flycheck-clang-language-standard "c++11")
  '(flycheck-completion-system (quote ido))
  '(flycheck-display-errors-delay 0.25)
  '(flycheck-global-modes (quote (not ruby-mode)))
