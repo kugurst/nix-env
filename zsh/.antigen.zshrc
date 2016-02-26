@@ -31,6 +31,7 @@ export EDITOR=emacs
 export LANG=en_US.UTF-8
 export WINEARCH="win32"
 export STEAM_FRAME_FORCE_CLOSE=1
+export CYGWIN="winsymlinks:nativestrict"
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
@@ -89,8 +90,8 @@ semacs () {
     SASS_PATH="/home/mark/cinnamonroll/app/assets/images:/home/mark/cinnamonroll/app/assets/javascripts:/home/mark/cinnamonroll/app/assets/stylesheets:/home/mark/cinnamonroll/vendor/assets/javascripts:/home/mark/cinnamonroll/vendor/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/turbolinks-2.5.3/lib/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/angularjs-rails-1.4.7/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/images:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-ui-rails-5.0.5/app/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/jquery-rails-4.0.5/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/js-routes-1.1.2/app/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/coffee-rails-4.1.0/lib/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/foundation-rails-5.5.1.2/vendor/assets/javascripts:/usr/local/rvm/gems/ruby-head@personal_server/gems/foundation-rails-5.5.1.2/vendor/assets/stylesheets:/usr/local/rvm/gems/ruby-head@personal_server/gems/susy-2.2.7/sass" emacs $@ & disown
 }
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/.quartus_path
+[[ -e "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+[[ -e "~/.quartus_path" ]] && source ~/.quartus_path
 
 add_to_path -r "/home/mark/vdent/bin"
 
