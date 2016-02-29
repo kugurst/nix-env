@@ -31,7 +31,7 @@ export EDITOR=emacs
 export LANG=en_US.UTF-8
 export WINEARCH="win32"
 export STEAM_FRAME_FORCE_CLOSE=1
-export CYGWIN="winsymlinks:nativestrict"
+#export CYGWIN="winsymlinks:nativestrict"
 
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
@@ -91,7 +91,9 @@ semacs () {
 }
 
 [[ -e "/usr/share/doc/pkgfile/command-not-found.zsh" ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
-[[ -e "~/.quartus_path" ]] && source ~/.quartus_path
+[[ -e "$HOME/.quartus_path" ]] && source ~/.quartus_path
+[[ -e "$HOME/.zshrc.custom" ]] && source ~/.zshrc.custom
+[[ -e "$HOME/.minttycolorrc" ]] && source ~/.minttycolorrc
 
 add_to_path -r "/home/mark/vdent/bin"
 
