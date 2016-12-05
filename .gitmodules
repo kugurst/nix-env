@@ -46,9 +46,6 @@
 [submodule "zsh/.oh-my-zsh"]
     path = zsh/.oh-my-zsh
     url = https://github.com/kugurst/oh-my-zsh.git
-[submodule "emacs/.emacs.d/plugins/emacs-minimap"]
-    path = emacs/.emacs.d/plugins/emacs-minimap
-    url = https://github.com/dustinlacewell/emacs-minimap.git
 [submodule "emacs/.emacs.d/plugins/guess-style"]
     path = emacs/.emacs.d/plugins/guess-style
     url = https://github.com/nschum/guess-style
