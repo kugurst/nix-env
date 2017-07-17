@@ -31,15 +31,25 @@ EOBUNDLES
 [[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme
-if [[ "$HOST" == "nakiami" ]]; then
-    antigen theme kugurst/oh-my-zsh themes/bureau
-elif [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
+if [[ "$TERM" == "eterm-color" || "$TERM" == "dumb" ]]; then
     antigen theme kugurst/oh-my-zsh themes/lambda-mod
+ #   echo "lambda-mod"
+elif [[ "$HOST" == "nakiami" ]]; then
+    antigen theme kugurst/oh-my-zsh themes/bureau
+ #   echo "bureau"
+elif [[ "$HOST" == "legion" ]]; then
+    antigen theme kugurst/oh-my-zsh themes/funky
+ #   echo "funky"
 elif [[ -z "$DISPLAY" ]]; then
     antigen theme kugurst/oh-my-zsh themes/blinks
+ #   echo "blinks"
 else
     antigen theme kugurst/oh-my-zsh themes/agnoster
+ #   echo "agnoster"
 fi
+
+# antigen theme kugurst/oh-my-zsh themes/funky
 
 # Tell antigen that you're done.
 antigen apply
+

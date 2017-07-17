@@ -1,31 +1,31 @@
 #[[ ! $TERM == "eterm-color" ]] && [[ $- == *i* ]] && [[ ! $TERM == "dumb" ]] && [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && exec tmux
-PAT="$PATH"
-PATH=""
-
-function add_to_path {
-    zparseopts -D -E -- r::=R
-
-    ADDR=("${(@s/:/)1}")
-    for i in "${ADDR[@]}"; do
-        if [[ ! "$PATH" == *"$i"* ]]; then
-            if [[ ! -z "$R" ]]; then
-                PATH="$PATH:$i"
-            else
-                PATH="$i:$PATH"
-            fi
-        fi
-    done
-
-    if [[ "$PATH" == ":"* ]]; then
-        PATH="${PATH#":"}"
-    elif [[ "$PATH" == *":" ]]; then
-        PATH="${PATH%":"}"
-    fi
-
-    export PATH="$PATH"
-}
-
-add_to_path -r "$PAT"
+# PAT="$PATH"
+# PATH=""
+# 
+# function add_to_path {
+#     zparseopts -D -E -- r::=R
+# 
+#     ADDR=("${(@s/:/)1}")
+#     for i in "${ADDR[@]}"; do
+#         if [[ ! "$PATH" == *"$i"* ]]; then
+#             if [[ ! -z "$R" ]]; then
+#                 PATH="$PATH:$i"
+#             else
+#                 PATH="$i:$PATH"
+#             fi
+#         fi
+#     done
+# 
+#     if [[ "$PATH" == ":"* ]]; then
+#         PATH="${PATH#":"}"
+#     elif [[ "$PATH" == *":" ]]; then
+#         PATH="${PATH%":"}"
+#     fi
+# 
+#     export PATH="$PATH"
+# }
+# 
+# add_to_path -r "$PAT"
 
 export EDITOR=emacs
 export LANG=en_US.UTF-8
@@ -95,10 +95,13 @@ semacs () {
 [[ -e "$HOME/.zshrc.custom" ]] && source ~/.zshrc.custom
 [[ -e "$HOME/.minttycolorrc" ]] && source ~/.minttycolorrc
 
-add_to_path -r "/home/mark/vdent/bin"
+# add_to_path -r "/home/mark/vdent/bin"
 
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 
 export rvmsudo_secure_path=0
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+
+# antigen theme kugurst/oh-my-zsh themes/funky
+# antigen apply
