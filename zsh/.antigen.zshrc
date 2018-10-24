@@ -27,6 +27,10 @@
 # 
 # add_to_path -r "$PAT"
 
+if [ -f ~/isolate_path.py ]; then
+    export PATH="$(/usr/bin/python3 ~/isolate_path.py)"
+fi
+
 export EDITOR=emacs
 export LANG=en_US.UTF-8
 export WINEARCH="win32"
