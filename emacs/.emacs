@@ -58,6 +58,9 @@
  '(menu-bar-mode nil)
  '(multi-term-buffer-name "mt")
  '(multi-term-program "/bin/zsh")
+ '(package-selected-packages
+ (quote
+  (yasnippet yari xterm-color web-mode unbound smex shell-pop seti-theme scss-mode rvm rspec-mode robe rinari readline-complete rainbow-mode projectile-rails multi-term marmalade markdown-mode inflections ido-yes-or-no highlight-indentation helm-swoop helm haml-mode gruvbox-theme grizzl fuzzy furl flymake-ruby flymake-coffee flycheck f diminish delight darktooth-theme coffee-mode clean-aindent-mode better-defaults avy-zap auto-complete ace-window)))
  '(shell-pop-autocd-to-working-dir nil)
  '(shell-pop-default-directory nil)
  '(shell-pop-full-span t)

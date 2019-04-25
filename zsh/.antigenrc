@@ -18,7 +18,6 @@ git
 git-extras
 gitignore
 last-working-dir
-per-directory-history
 pip
 python
 ruby
@@ -27,6 +26,9 @@ systemd
 zsh-users/zsh-completions src
 EOBUNDLES
 
+# Defunct plugins. Re-enable at a future time:
+# per-directory-history
+#
 # Syntax highlighting bundle.
 [[ ! $TERM == "dumb" ]] && antigen bundle zsh-users/zsh-syntax-highlighting
 

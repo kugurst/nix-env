@@ -27,11 +27,11 @@
 # 
 # add_to_path -r "$PAT"
 
-if [ -f ~/isolate_path.py ]; then
-    export PATH="$(/usr/bin/python3 ~/isolate_path.py)"
-fi
+# if [ -f ~/isolate_path.py ]; then
+#     export PATH="$(/usr/bin/python3 ~/isolate_path.py)"
+# fi
 
-export EDITOR=emacs
+export EDITOR=vim
 export LANG=en_US.UTF-8
 export WINEARCH="win32"
 export STEAM_FRAME_FORCE_CLOSE=1
@@ -106,6 +106,8 @@ bindkey "^[[4~" end-of-line
 
 export rvmsudo_secure_path=0
 [[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
+
+[[ -e "$HOME/.zshrc.local" ]] && source ~/.zshrc.local
 
 # antigen theme kugurst/oh-my-zsh themes/funky
 # antigen apply
