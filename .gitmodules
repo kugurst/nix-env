@@ -28,9 +28,6 @@
 [submodule "emacs/.emacs.d/plugins/ssh-el"]
     path = emacs/.emacs.d/plugins/ssh-el
     url = https://github.com/ieure/ssh-el
-[submodule "emacs/.emacs.d/plugins/undo-tree"]
-    path = emacs/.emacs.d/plugins/undo-tree
-    url = http://www.dr-qubit.org/git/undo-tree.git
 [submodule "emacs/.emacs.d/plugins/yaml-mode"]
     path = emacs/.emacs.d/plugins/yaml-mode
     url = https://github.com/yoshiki/yaml-mode
